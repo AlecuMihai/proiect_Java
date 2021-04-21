@@ -1,6 +1,5 @@
-package fd;
+package com.foodDelivery;
 
-import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.Arrays;
 

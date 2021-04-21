@@ -1,4 +1,4 @@
-package fd;
+package com.foodDelivery;
 
 import java.util.*;
 
@@ -14,8 +14,6 @@ public class Restaurant extends LocalB implements Comparable<Restaurant>{
     private HashMap<Product, Double> menu;
 
     private Integer popularityScore;
-
-    private final long id = NEXT_ID.get();
 
     public static class Builder extends LocalB.Builder<Builder> {
         private final Popularity popularity = Popularity.MEDIUM;
@@ -84,7 +82,7 @@ public class Restaurant extends LocalB implements Comparable<Restaurant>{
 
     @Override
     public Object getID() {
-        return this.hashCode() + id;
+        return this.hashCode();
     }
 
     //* DE REFACUT toString, hashCode si equals
@@ -98,33 +96,18 @@ public class Restaurant extends LocalB implements Comparable<Restaurant>{
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(new Object[] {this.name + this.popularity});
+        return Arrays.hashCode(new Object[] {this.name + this.popularity + this.email});
     }
 
     @Override
-    public boolean equals(Object copy) {
-        if(copy == null)
+    public boolean equals(Object o) {
+        if(o == null)
             throw new NullPointerException("Object entered is null");
-        else if(copy.getClass() != this.getClass())
+        else if(o.getClass() != this.getClass())
             throw new IllegalArgumentException("Object entered is not Market");
         else {
-            Restaurant copy_2 = (Restaurant) copy;
-            return copy_2.name.equals(this.name) && Objects.equals(copy_2.popularity, this.popularity);
+            Restaurant o_2 = (Restaurant) o;
+            return o_2.name.equals(this.name) && Objects.equals(o_2.popularity, this.popularity);
         }
-    }
-
-    public static void main(String[] args) {
-        Restaurant r1 = new Restaurant.Builder("Vivo").build();
-        LocalB r2 = new Restaurant.Builder("Vivo").setPopularity(Popularity.LOW).build();
-        LocalB m1 = new Market.Builder("Kaufland", Market.Size.SUPER).build();
-
-        Product p1 = new Product.Builder("Coca-cola").addNutritionFacts(new NutritionFacts.Builder(10.0, 10).build()).build();
-        Product p2 = p1.clone();
-
-        r1.addItemToMenu(p1, 20.0);
-
-
-        Product pp1 = r1.getItemFromMenu("Coca-cola");
-        System.out.println();
     }
 }

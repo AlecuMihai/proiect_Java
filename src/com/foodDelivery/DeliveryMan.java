@@ -1,13 +1,10 @@
-package fd;
+package com.foodDelivery;
 
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
 
 public class DeliveryMan implements IdentifiedObject{
-
-    static final AtomicLong NEXT_ID = new AtomicLong(100);
-    final long id = NEXT_ID.getAndIncrement();
 
     private final String firstName;
     private final String lastName;
@@ -26,9 +23,9 @@ public class DeliveryMan implements IdentifiedObject{
         private Vehicle vehicle;
 
         public Builder(String firstName, String lastName, String phoneNumber) {
-            Pattern regex = Pattern.compile("[$&+,:;=?@#|]");
+            Pattern regex = Pattern.compile("[$&+,:;=?@#|/]");
             if(regex.matcher(lastName).find() || regex.matcher(lastName).find() || regex.matcher(phoneNumber).find())
-                throw new IllegalArgumentException("No special characters");
+                throw new IllegalArgumentException("Attributes can not contain special characters");
             this.firsName = firstName;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
@@ -54,11 +51,25 @@ public class DeliveryMan implements IdentifiedObject{
         this.isAvailable = Objects.requireNonNull(val);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DeliveryMan)) return false;
+        DeliveryMan that = (DeliveryMan) o;
+        return firstName.equals(that.firstName) && lastName.equals(that.lastName) && phoneNumber.equals(that.phoneNumber) && isAvailable.equals(that.isAvailable) && vehicle == that.vehicle;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, phoneNumber, isAvailable, vehicle);
+    }
+
     public Boolean getAvailability() {
         return this.isAvailable;
     }
+
     @Override
     public Object getID() {
-        return id;
+        return this.hashCode();
     }
 }

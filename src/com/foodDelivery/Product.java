@@ -1,4 +1,4 @@
-package fd;
+package com.foodDelivery;
 
 import java.util.Objects;
 
@@ -48,7 +48,18 @@ public class Product implements Cloneable{
         return foo;
     }
 
-    // * de refacut hashCode si equals !!!
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return name.equals(product.name) && nutritionFacts.equals(product.nutritionFacts);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, nutritionFacts);
+    }
 
     @Override
     public String toString() {

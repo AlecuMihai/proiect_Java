@@ -1,16 +1,12 @@
-package fd;
+package com.foodDelivery;
 
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class User implements IdentifiedObject{
     private final String firstName;
     private final String lastName;
     private final String phoneNumber;
-
-    private static final AtomicLong NEXT_ID = new AtomicLong(0);
-    private final long id = NEXT_ID.getAndIncrement();
 
     User(String firstName, String lastName, String phoneNumber) {
 
@@ -30,12 +26,12 @@ public class User implements IdentifiedObject{
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(new Object[]{this.firstName + this.lastName});
+        return Arrays.hashCode(new Object[]{this.firstName + this.lastName + this.phoneNumber});
     }
 
     @Override
     public Object getID() {
-        return this.hashCode() + this.id;
+        return this.hashCode();
     }
 }
 

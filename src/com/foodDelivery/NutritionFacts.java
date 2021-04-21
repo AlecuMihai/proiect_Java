@@ -1,4 +1,6 @@
-package fd;
+package com.foodDelivery;
+
+import java.util.Objects;
 
 public class NutritionFacts implements Cloneable{
     private final Double servingSize;
@@ -9,11 +11,9 @@ public class NutritionFacts implements Cloneable{
     private final Double carbohydrate;
 
     public static class Builder {
-        // Required parameters
         private final Double servingSize;
         private final int servings;
 
-        // Optional parameters - initialized to default values
         private Double calories = (double) 0;
         private Double fat = (double) 0;
         private Double sodium = (double) 0;
@@ -48,7 +48,6 @@ public class NutritionFacts implements Cloneable{
         sodium = builder.sodium;
         carbohydrate = builder.carbohydrate;
     }
-
     // * If you've read the item about cloning in my book, especially if you read between the lines,
     // you will know that I think clone is deeply broken.
     // [...] It's a shame that Cloneable is broken, but it happens.**
@@ -66,11 +65,21 @@ public class NutritionFacts implements Cloneable{
         return foo;
     }
 
-    //* DE REFACUT HASHCODE SI EQUALS
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof NutritionFacts)) return false;
+        NutritionFacts that = (NutritionFacts) o;
+        return servingSize.equals(that.servingSize) &&
+                servings.equals(that.servings) &&
+                calories.equals(that.calories) &&
+                fat.equals(that.fat) &&
+                sodium.equals(that.sodium) &&
+                carbohydrate.equals(that.carbohydrate);
+    }
 
-    public static void main(String[] args) {
-        NutritionFacts n1 = new NutritionFacts.Builder(10.0, 20).build();
-        NutritionFacts n2 = n1.clone();
-        System.out.println();
+    @Override
+    public int hashCode() {
+        return Objects.hash(servingSize, servings, calories, fat, sodium, carbohydrate);
     }
 }

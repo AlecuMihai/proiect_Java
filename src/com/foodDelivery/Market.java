@@ -1,4 +1,4 @@
-package fd;
+package com.foodDelivery;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,8 +8,6 @@ public class Market extends LocalB {
     public enum Size {MINI, SUPER}
     private final Size size;
     private HashMap<Product, Double> stock;
-
-    private final long id = NEXT_ID.get();
 
     public static class Builder extends LocalB.Builder<Builder> {
 
@@ -44,7 +42,7 @@ public class Market extends LocalB {
     }
     @Override
     public Object getID() {
-        return this.hashCode() + id;
+        return this.hashCode();
     }
     @Override
     public String toString() {
@@ -58,6 +56,7 @@ public class Market extends LocalB {
     public int hashCode() {
         return Arrays.hashCode(new Object[] {this.name, this.size});
     }
+
     @Override
     public boolean equals(Object copy) {
         if(copy == null)
@@ -90,7 +89,8 @@ public class Market extends LocalB {
     // public void removeItemFromStock() {}
 
     public HashMap<Product, Double> getProductsList() {
-        return (HashMap<Product, Double>) this.stock.clone();
+         HashMap<Product, Double> o = (HashMap<Product, Double>) this.stock.clone();
+         return o.getClass() == stock.getClass() ? o : null;
     }
 
     public Double getProducePrice(Product product) throws NullPointerException{

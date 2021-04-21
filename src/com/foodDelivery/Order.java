@@ -1,9 +1,8 @@
-package fd;
+package com.foodDelivery;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class Order implements IdentifiedObject{
     private final LocalB shop;
@@ -12,12 +11,8 @@ public class Order implements IdentifiedObject{
     private HashMap<Product, Integer> shoppingList = new HashMap<>();
     private Double price;
 
-    private static final AtomicLong NEXT_ID = new AtomicLong(0);
-    private final long id = NEXT_ID.getAndIncrement();
-
     public static class Builder {
 
-        // mandatory members
         private final LocalB shop;
         private final User user;
         private final DeliveryMan deliveryMan;
@@ -33,7 +28,6 @@ public class Order implements IdentifiedObject{
         }
     }
 
-
     // * TO-DO REWRITE toString, hashCode and equals
     public String toString() {
         return "Order{" +
@@ -41,7 +35,7 @@ public class Order implements IdentifiedObject{
                 ", user=" + user +
                 ", deliveryMan=" + deliveryMan +
                 ", shoppingList=" + shoppingList +
-                ", id=" + id +
+                ", id=" + this.getID() +
                 '}';
     }
 
@@ -52,7 +46,7 @@ public class Order implements IdentifiedObject{
 
     @Override
     public Object getID() {
-        return this.hashCode() + id;
+        return this.hashCode();
     }
 
     private Order(Builder builder) throws NullPointerException{
@@ -69,9 +63,5 @@ public class Order implements IdentifiedObject{
 
     public Double getOrderPrice() {
         return this.price;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
