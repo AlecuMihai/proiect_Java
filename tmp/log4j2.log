@@ -1,0 +1,28 @@
+17:16:41.008 [main] INFO  - User created : DeliveryMan{firstName='Cecelia', lastName='Fitzgerald', phoneNumber='0722828782', isAvailable=false, vehicle=CAR}
+17:16:41.014 [main] INFO  - User created : DeliveryMan{firstName='Sophia', lastName='Dominguez', phoneNumber='0779753754', isAvailable=false, vehicle=CAR}
+17:16:41.015 [main] INFO  - User created : DeliveryMan{firstName='Delilah', lastName='Perkins', phoneNumber='+40(262)281388', isAvailable=false, vehicle=CAR}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Cristofer', lastName='Roach', phoneNumber='+40(230)521919', isAvailable=false, vehicle=BIKE}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Yadiel', lastName='George', phoneNumber='+40(250)733402', isAvailable=false, vehicle=BIKE}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Finn', lastName='Rogers', phoneNumber='+40(466)521919', isAvailable=false, vehicle=MOTORBIKE}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Casey', lastName='Mayer', phoneNumber='+40(262)281588', isAvailable=false, vehicle=SCOOTER}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Nayeli', lastName='Sparks', phoneNumber='+40(250)123402', isAvailable=false, vehicle=SCOOTER}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Anabel', lastName='Terrell', phoneNumber='0737786934', isAvailable=false, vehicle=CAR}
+17:16:41.016 [main] INFO  - User created : DeliveryMan{firstName='Nathen', lastName='Lawrence', phoneNumber='0722638567', isAvailable=false, vehicle=BIKE}
+17:16:41.017 [main] INFO  - User created : DeliveryMan{firstName='Connor', lastName='Simmons', phoneNumber='0244657023', isAvailable=false, vehicle=BIKE}
+17:16:41.017 [main] INFO  - User created : DeliveryMan{firstName='Markus', lastName='Fitzgerald', phoneNumber='0789124464', isAvailable=false, vehicle=BIKE}
+17:16:41.023 [main] INFO  - USER User{firstName='Mihai', lastName='Marian', phoneNumber='0721270759'} created
+17:16:41.023 [main] INFO  - USER User{firstName='Mihai', lastName='Andrei', phoneNumber='0737785123'} created
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Cecelia', lastName='Fitzgerald', phoneNumber='0722828782', isAvailable=false, vehicle=CAR}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Sophia', lastName='Dominguez', phoneNumber='0779753754', isAvailable=false, vehicle=CAR}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Delilah', lastName='Perkins', phoneNumber='+40(262)281388', isAvailable=false, vehicle=CAR}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Cristofer', lastName='Roach', phoneNumber='+40(230)521919', isAvailable=false, vehicle=BIKE}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Yadiel', lastName='George', phoneNumber='+40(250)733402', isAvailable=false, vehicle=BIKE}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Finn', lastName='Rogers', phoneNumber='+40(466)521919', isAvailable=false, vehicle=MOTORBIKE}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Casey', lastName='Mayer', phoneNumber='+40(262)281588', isAvailable=false, vehicle=SCOOTER}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Nayeli', lastName='Sparks', phoneNumber='+40(250)123402', isAvailable=false, vehicle=SCOOTER}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Anabel', lastName='Terrell', phoneNumber='0737786934', isAvailable=false, vehicle=CAR}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Nathen', lastName='Lawrence', phoneNumber='0722638567', isAvailable=false, vehicle=BIKE}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Connor', lastName='Simmons', phoneNumber='0244657023', isAvailable=false, vehicle=BIKE}
+17:19:43.768 [main] INFO  - User created : DeliveryMan{firstName='Markus', lastName='Fitzgerald', phoneNumber='0789124464', isAvailable=false, vehicle=BIKE}
+17:19:43.768 [main] INFO  - USER User{firstName='Mihai', lastName='Marian', phoneNumber='0721270759'} created
+17:19:43.784 [main] INFO  - USER User{firstName='Mihai', lastName='Andrei', phoneNumber='0737785123'} created
